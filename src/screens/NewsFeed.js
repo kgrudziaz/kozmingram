@@ -17,12 +17,12 @@ export default function Photos({ navigation }) {
   });
 
   return (
-      <View style={{ height: "100%", alignItems: "center", justifyContent: "center", marginTop: 200 }}>
+      <View style={styles.container}>
         <Image
         style={styles.topBar}
         source={{uri: 'https://i.ibb.co/3hnPxfk/bar-top2.png'}}
         />
-        <View stylestyle={{ height: "100%", alignItems: "center", justifyContent: "center" }}>
+        <View>
         {isError && <Text>Error</Text>}
         {isLoading && <Text>Loading...</Text>}
           <FlatList
@@ -30,9 +30,9 @@ export default function Photos({ navigation }) {
             renderItem = {({ item }) => {
               return (
                 <View >
-                  <Image style={{height: 44, width: 360, flex: 1, marginTop:300}} source={{uri: 'https://i.ibb.co/tHFNKqw/account-bar.png'}} />
-                  <Image style={{height: 360, width: 360, flex: 1, marginTop:500}} source={{uri: item.url }} />
-                  <Image style={{height:120, width: 360, flex: 1, marginTop:700}} source={{uri: 'https://i.ibb.co/Zf764T1/comment-bar.png'}}/>
+                  <Image style={{height: 44, width: 360, marginTop:10}} source={{uri: 'https://i.ibb.co/tHFNKqw/account-bar.png'}} />
+                  <Image style={{height: 360, width: 360}} source={{uri: item.url }} />
+                  <Image style={{height:120, width: 360, marginBottom: 20}} source={{uri: 'https://i.ibb.co/Zf764T1/comment-bar.png'}}/>
                 </View>
               )
             } }
@@ -44,20 +44,14 @@ export default function Photos({ navigation }) {
 
 const styles = StyleSheet.create({
 container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop:300
-   },
-    topBar:{
-    flex: 1,
-    width: "100%",
-    height: '100%',
-    // aspectRatio: 6.81,
-    resizeMode: 'contain',
-    alignItems:"center",
-    justifyContent: "center",
-    marginTop:300
-    }
+  height: "100%",
+  alignItems: "center",
+  marginTop: 50,
+  backgroundColor: "#fff"
+  },
+topBar:{
+  backgroundColor: "#fff",
+  width: "100%",
+  aspectRatio: 6.81,
+  }
 });

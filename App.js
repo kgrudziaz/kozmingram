@@ -10,8 +10,7 @@ const queryClient = new QueryClient();
 
 export default function App() {
   return (
-    <View>
-      <StatusBar style="auto" />
+    <View style={styles.container}>
       <QueryClientProvider client={queryClient}>
         <NavigationContainer>
             <StatusBar style="auto" />
@@ -25,10 +24,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 400,
+    backgroundColor: '#fff', 
+    height: "100%",
   },
 });

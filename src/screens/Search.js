@@ -17,10 +17,10 @@ export default function Search({ navigation }) {
   });
 
   return (
-      <View>
+      <View style={styles.container}>
         <Image
          style={styles.topBar}
-        source={{uri: 'https://iv.pl/images/bfa2a0cdc19cac31d108a26d307ac40d.png'}}
+         source={{uri: 'https://i.ibb.co/Q9XchqM/search-bar.png'}}
         />
         <View style>
         {isError && <Text>Error</Text>}
@@ -43,18 +43,13 @@ export default function Search({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    height: "100%", 
+    alignItems: "center", 
+    marginTop: 50, 
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop:50
   },
     topBar:{
-    flex: 1,
     width: '100%',
     aspectRatio: 7.33,
-    resizeMode: 'contain',
-    alignItems:"center",
-    justifyContent: "center",
     }
 });
